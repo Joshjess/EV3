@@ -38,7 +38,7 @@ function(add_ev3_executable target sources)
 endfunction()
 
 if (EV3DEV_LANG_CPP_MASTER_PROJECT)
-    add_subdirectory(../application)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/application)
 
     #----------------------------------------------------------------------
     # Install the library, header, and cmake configuration
