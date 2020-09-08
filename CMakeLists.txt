@@ -38,10 +38,7 @@ function(add_ev3_executable target sources)
 endfunction()
 
 if (EV3DEV_LANG_CPP_MASTER_PROJECT)
-    enable_testing()
-    add_subdirectory(../../Downloads/ev3dev-lang-cpp-master/ev3dev-lang-cpp-master/tests)
-
-    add_subdirectory(../../Downloads/ev3dev-lang-cpp-master/ev3dev-lang-cpp-master/demos)
+    add_subdirectory(../application)
 
     #----------------------------------------------------------------------
     # Install the library, header, and cmake configuration
