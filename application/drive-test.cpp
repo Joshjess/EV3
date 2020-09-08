@@ -51,10 +51,8 @@ public:
   bool initialized() const;
 
   void terminate_on_key();
-  void panic_if_touched();
 
   void remote_loop();
-  void drive_autonomously();
 
   void terminate() { _terminate = true; }
 
@@ -188,30 +186,11 @@ void control::terminate_on_key()
  #endif
 }
 
-void control::panic_if_touched()
-{
-  if (!_sensor_touch.connected())
-  {
-    cout << "no touch sensor found!" << endl;
-    return;
-  }
-
-  thread t([&] () {
-    while (!_terminate) {
-      if (_sensor_touch.value())
-      {
-        terminate();
-        reset();
-        break;
-      }
-      this_thread::sleep_for(chrono::milliseconds(100));
-    }
-  });
-  t.detach();
-}
 
 void control::remote_loop()
 {
+    //code veranderen naar bluetooth remote
+
   remote_control r(_sensor_ir);
 
   if (!r.connected())
@@ -280,59 +259,6 @@ void control::remote_loop()
   reset();
 }
 
-void control::drive_autonomously()
-{
-  if (!_sensor_ir.connected())
-  {
-    cout << "no infrared sensor found!" << endl;
-    return;
-  }
-
-  _sensor_ir.set_mode(infrared_sensor::mode_ir_prox);
-
-  while (!_terminate)
-  {
-    int distance = _sensor_ir.value();
-    if (distance <= 0)
-    {
-      // panic
-      terminate();
-      reset();
-      break;
-    }
-    else if (distance >= 20)
-    {
-      if (_state != state_driving)
-        drive(750);
-      this_thread::sleep_for(chrono::milliseconds(10));
-    }
-    else
-    {
-      stop();
-
-      int direction = 100;
-      int start_distance = distance;
-
-      while (distance <= 40)
-      {
-        turn(direction);
-
-        distance = _sensor_ir.value();
-        if (distance < start_distance)
-        {
-          if (direction < 0)
-          {
-            drive(-700, 1000);
-          }
-          else
-          {
-            direction = -200;
-          }
-        }
-      }
-    }
-  }
-}
 
 int main()
 {
