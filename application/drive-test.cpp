@@ -305,7 +305,7 @@ void control::line_following(){
             steer(motorleftspeed, motorrightspeed);
             lasterror = error;
             cout << "value: " << value << " error: " << error << endl;
-            cout << "Left: " << motorleftspeed << " Right: " << motorrightspeed << endl;
+            cout << "Left: " << motorleftspeed << " Right: " << right << endl;
     }
 
 
