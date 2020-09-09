@@ -16,3 +16,5 @@ script:
 - CC=gcc-5 CXX=g++-5 cmake ..
 - make
 - ctest --output-on-failure
+
+skip_cleanup: true
