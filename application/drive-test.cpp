@@ -48,6 +48,8 @@ public:
   void stop();
   void reset();
 
+  void steer(short motorLeft, short motorRight);
+
   bool initialized() const;
 
   void terminate_on_key();
@@ -123,8 +125,8 @@ void control::turn(int direction)
 
   _state = state_turning;
 
-  _motor_left. set_position_sp( -direction).set_speed_sp(100).run_to_rel_pos();
-  _motor_right.set_position_sp( -direction).set_speed_sp(100).run_to_rel_pos();
+  _motor_left. set_position_sp( direction).set_speed_sp(100).run_to_rel_pos();
+  _motor_right.set_position_sp(-direction).set_speed_sp(100).run_to_rel_pos();
 
   while (_motor_left.state().count("running") || _motor_right.state().count("running"))
     this_thread::sleep_for(chrono::milliseconds(10));
@@ -262,16 +264,29 @@ void control::remote_loop()
 }
 
 
+void control::steer(short motorLeft, short motorRight)
+{
+
+    _motor_left. set_position_sp( motorLeft).set_speed_sp(100).run_to_rel_pos();
+    _motor_right.set_position_sp(-motorRight).set_speed_sp(100).run_to_rel_pos();
+
+    while (_motor_left.state().count("running") || _motor_right.state().count("running"))
+        this_thread::sleep_for(chrono::milliseconds(10));
+
+    _state = state_idle;
+}
+
 
 void control::line_following(){
     color_sensor light;
     short value = 0;
     short integral = 0;
     short lasterror = 0;
-    short motorspeed;
+    short motorleftspeed;
+    short motorrightspeed;
     float middenpunt;
-    short white = 50;
-    short black = 10;
+    short white = 60;
+    short black = 0;
     middenpunt = (white + black) / 2;
     short beginsnelheid = 30;
     short correction;
@@ -282,12 +297,13 @@ void control::line_following(){
 
     while (!_terminate){
             value = light.reflected_light_intensity();
-            short error = value - middenpunt / 2;
+            short error = value - middenpunt;
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
-            motorspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
-            turn(motorspeed);
+            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            steer(motorleftspeed, motorrightspeed);
             lasterror = error;
             cout << "value: " << value << " error: " << error << endl;
     }
