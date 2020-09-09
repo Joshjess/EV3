@@ -123,8 +123,8 @@ void control::turn(int direction)
 
   _state = state_turning;
 
-  _motor_left. set_position_sp( direction).set_speed_sp(500).run_to_rel_pos();
-  _motor_right.set_position_sp(-direction).set_speed_sp(500).run_to_rel_pos();
+  _motor_left. set_position_sp( direction).set_speed_sp(100).run_to_rel_pos();
+  _motor_right.set_position_sp(-direction).set_speed_sp(100).run_to_rel_pos();
 
   while (_motor_left.state().count("running") || _motor_right.state().count("running"))
     this_thread::sleep_for(chrono::milliseconds(10));
@@ -271,8 +271,8 @@ void control::line_following(){
     short motorleftspeed;
     short motorrightspeed;
     float middenpunt;
-    short white = 0;
-    short black = 70;
+    short white = 60;
+    short black = 0;
     middenpunt = (white + black) / 2;
     short beginsnelheid = 30;
     short correction;
@@ -287,12 +287,12 @@ void control::line_following(){
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
-
             motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
             motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
             turn(motorrightspeed);
             turn(motorleftspeed);
             lasterror = error;
+            cout << "value: " << value << " error: " << error;
     }
 
 
