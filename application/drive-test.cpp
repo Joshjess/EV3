@@ -287,7 +287,7 @@ void control::line_following(){
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
-            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            motorleftspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
             motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
             turn(motorrightspeed);
             turn(motorleftspeed);
