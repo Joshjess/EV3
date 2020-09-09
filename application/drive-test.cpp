@@ -290,8 +290,8 @@ void control::line_following(){
 
             motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
             motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
-            control(motorrightspeed);
-            control(motorleftspeed);
+            turn(motorrightspeed);
+            turn(motorleftspeed);
             lasterror = error;
     }
 
