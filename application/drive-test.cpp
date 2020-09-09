@@ -284,10 +284,9 @@ void control::line_following(){
     short lasterror = 0;
     short motorleftspeed;
     short motorrightspeed;
-    float middenpunt;
-    short white = 60;
-    short black = 0;
-    middenpunt = (white + black) / 2;
+    short white = 40;
+    short black = 5;
+    float middenpunt = (white + black) / 2;
     short beginsnelheid = 30;
     short correction;
     float kp = 1.5;
@@ -301,11 +300,12 @@ void control::line_following(){
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
-            motorleftspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
             motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
             steer(motorleftspeed, motorrightspeed);
             lasterror = error;
             cout << "value: " << value << " error: " << error << endl;
+            cout << "Left: " << motorleftspeed << " Right: " << motorrightspeed << endl;
     }
 
 
