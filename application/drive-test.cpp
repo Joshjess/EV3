@@ -54,6 +54,8 @@ public:
 
   void remote_loop();
 
+  void line_following();
+
   void terminate() { _terminate = true; }
 
 protected:
@@ -260,6 +262,42 @@ void control::remote_loop()
 }
 
 
+
+void control::line_following(){
+    light_sensor light;
+    short value = 0;
+    short integral = 0;
+    short lasterror = 0;
+    short motorleftspeed;
+    short motorrightspeed;
+    float middenpunt;
+    short white = 70;
+    short black = 40;
+    middenpunt = (white + black) / 2;
+    short beginsnelheid = 30;
+    short correction;
+    float kp = 1.5;
+    float ki = 0;
+    float kd = 0;
+
+
+    while (!_terminate){
+            value = light.reflected_light_intensity();
+            short error = value - middenpunt;
+            integral = error + integral;
+            short derivative = error - lasterror;
+            correction = (kp * error) + (ki * integral) + (kd * derivative);
+
+            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            control(motorrightspeed);
+            control(motorleftspeed);
+            lasterror = error;
+    }
+
+
+}
+
 int main()
 {
   control c;
@@ -267,7 +305,6 @@ int main()
   if (c.initialized())
   {
     c.terminate_on_key(); // we terminate if a button is pressed
-    c.panic_if_touched(); // we panic if the touch sensor is triggered
 
   // change mode to 1 to get IR remote mode
     int mode = 2;
@@ -286,7 +323,7 @@ int main()
     {
       cout << "touch the sensor or press a button to stop." << endl << endl;
 
-      c.drive_autonomously();
+      c.line_following();
     }
   }
   else
