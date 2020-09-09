@@ -44,7 +44,7 @@ public:
   ~control();
 
   void drive(int speed, int time=0);
-  void turn(int direction);
+  void turn(short directionLef, short directionRight);
   void stop();
   void reset();
 
@@ -113,18 +113,16 @@ void control::drive(int speed, int time)
   }
 }
 
-void control::turn(int direction)
+void control::turn(short directionLeft, short directionRight)
 {
   if (_state != state_idle)
     stop();
-
-  if (direction == 0)
-    return;
+  
 
   _state = state_turning;
 
-  _motor_left. set_position_sp( direction).set_speed_sp(100).run_to_rel_pos();
-  _motor_right.set_position_sp(-direction).set_speed_sp(100).run_to_rel_pos();
+  _motor_left. set_position_sp( directionLeft).set_speed_sp(100).run_to_rel_pos();
+  _motor_right.set_position_sp(-directionRight).set_speed_sp(100).run_to_rel_pos();
 
   while (_motor_left.state().count("running") || _motor_right.state().count("running"))
     this_thread::sleep_for(chrono::milliseconds(10));
