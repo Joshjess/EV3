@@ -1,7 +1,7 @@
 dist: trusty
 language: cpp
 compiler:
-- gcc
+- gcc 
 
 addons:
   apt:
@@ -17,4 +17,17 @@ script:
 - make
 - ctest --output-on-failure
 
-skip_cleanup: true
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis@travis-ci.org"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+deploy:
+  provider: releases
+  on:
+    branch: master
+  api_key: $GITHUB_TOKEN
+  file: "${TRAVIS_BUILD_DIR}/build/application/drive-test"
+  skip_cleanup: true
+
