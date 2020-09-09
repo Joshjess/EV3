@@ -264,15 +264,15 @@ void control::remote_loop()
 
 
 void control::line_following(){
-    light_sensor light;
+    color_sensor light;
     short value = 0;
     short integral = 0;
     short lasterror = 0;
     short motorleftspeed;
     short motorrightspeed;
     float middenpunt;
-    short white = 70;
-    short black = 40;
+    short white = 0;
+    short black = 70;
     middenpunt = (white + black) / 2;
     short beginsnelheid = 30;
     short correction;
