@@ -44,7 +44,7 @@ public:
   ~control();
 
   void drive(int speed, int time=0);
-  void turn(short directionLef, short directionRight);
+  void turn(int direction);
   void stop();
   void reset();
 
@@ -113,16 +113,18 @@ void control::drive(int speed, int time)
   }
 }
 
-void control::turn(short directionLeft, short directionRight)
+void control::turn(int direction)
 {
   if (_state != state_idle)
     stop();
-  
+
+  if (direction == 0)
+    return;
 
   _state = state_turning;
 
-  _motor_left. set_position_sp( directionLeft).set_speed_sp(100).run_to_rel_pos();
-  _motor_right.set_position_sp(-directionRight).set_speed_sp(100).run_to_rel_pos();
+  _motor_left. set_position_sp( direction).set_speed_sp(100).run_to_rel_pos();
+  _motor_right.set_position_sp(-direction).set_speed_sp(100).run_to_rel_pos();
 
   while (_motor_left.state().count("running") || _motor_right.state().count("running"))
     this_thread::sleep_for(chrono::milliseconds(10));
@@ -266,8 +268,7 @@ void control::line_following(){
     short value = 0;
     short integral = 0;
     short lasterror = 0;
-    short motorleftspeed;
-    short motorrightspeed;
+    short motorspeed;
     float middenpunt;
     short white = 60;
     short black = 0;
@@ -285,10 +286,8 @@ void control::line_following(){
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
-            motorleftspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
-            motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
-            turn(motorrightspeed);
-            turn(motorleftspeed);
+            motorspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            turn(motorspeed);
             lasterror = error;
             cout << "value: " << value << " error: " << error << endl;
     }
