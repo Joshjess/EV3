@@ -270,8 +270,8 @@ void control::line_following(){
     short lasterror = 0;
     short motorspeed;
     float middenpunt;
-    short white = 60;
-    short black = 0;
+    short white = 50;
+    short black = 10;
     middenpunt = (white + black) / 2;
     short beginsnelheid = 30;
     short correction;
