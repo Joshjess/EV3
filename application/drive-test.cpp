@@ -284,9 +284,9 @@ void control::line_following(){
     short lasterror = 0;
     short motorleftspeed;
     short motorrightspeed;
-    short white = 20;
+    short white = 50;
     short black = 5;
-    float middenpunt = (white + black) / 2;
+    short middenpunt = 20;
     short beginsnelheid = 30;
     short correction;
     float kp = 1.1;
@@ -296,7 +296,7 @@ void control::line_following(){
 
     while (!_terminate){
             value = light.reflected_light_intensity();
-            short error = value - middenpunt;
+            short error = value - middenpunt - (100 * (value - black ) / (white - black));
             integral = error + integral;
             short derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
