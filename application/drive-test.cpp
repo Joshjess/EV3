@@ -292,7 +292,7 @@ void control::line_following(){
             turn(motorrightspeed);
             turn(motorleftspeed);
             lasterror = error;
-            cout << "value: " << value << " error: " << error;
+            cout << "value: " << value << " error: " << error << endl;
     }
 
 
