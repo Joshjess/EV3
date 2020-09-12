@@ -26,7 +26,7 @@ before_deploy:
 deploy:
   provider: releases
   on:
-    branch: feature/autodownloadstart
+    branch: master
   api_key: $GITHUB_TOKEN
   file: "${TRAVIS_BUILD_DIR}/build/application/drive-test"
   skip_cleanup: true
