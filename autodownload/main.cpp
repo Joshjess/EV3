@@ -85,10 +85,11 @@ void downloadFile(CURL *curl_handle, string downloadLink, FILE* file) {
 
     CURLcode res;
     // OPEN FILE
-    file = fopen(FILE_TO_DOWNLOAD_TO, "wb");
+    file = fopen(FILE_TO_DOWNLOAD_TO, "w+");
     if (file) {
         // SET URL
         curl_easy_setopt(curl_handle, CURLOPT_URL, downloadLink.c_str());
+        curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
         // WRITE DATA
         curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, handleFiles);
         curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, file);
