@@ -8,12 +8,12 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - arm-linux-gnueabi-gcc
-    - arm-linux-gnueabi-g++
+    - gcc-5
+    - g++-5
 
 script:
 - mkdir -p build && cd build
-- CC=arm-linux-gnueabi-gcc CXX=arm-linux-gnueabi-g++ cmake ..
+- CC=gcc-5 CXX=g++-5 cmake .. -DEV3DEV_PLATFORM=EV3
 - make
 - ctest --output-on-failure
 
