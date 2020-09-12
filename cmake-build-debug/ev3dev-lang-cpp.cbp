@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ev3dev-lang-cpp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\application\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ev3dev">
+				<Option output="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/libev3dev.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_NANOSLEEP"/>
+					<Add option="-DEV3DEV_PLATFORM_EV3"/>
+					<Add directory="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ev3dev"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ev3dev/fast">
+				<Option output="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/libev3dev.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_NANOSLEEP"/>
+					<Add option="-DEV3DEV_PLATFORM_EV3"/>
+					<Add directory="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ev3dev/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="drive-test">
+				<Option output="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/drive-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_NANOSLEEP"/>
+					<Add option="-DEV3DEV_PLATFORM_EV3"/>
+					<Add directory="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 drive-test"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="drive-test/fast">
+				<Option output="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/drive-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_NANOSLEEP"/>
+					<Add option="-DEV3DEV_PLATFORM_EV3"/>
+					<Add directory="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 drive-test/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/drive-test.cpp">
+			<Option target="drive-test"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/ev3dev.cpp">
+			<Option target="ev3dev"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/ev3dev.h">
+			<Option target="ev3dev"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake/ev3dev-config.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\application\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/drive-test.dir/drive-test.cpp.o -o drive-test  ../libev3dev.a -lpthread 

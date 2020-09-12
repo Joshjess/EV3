@@ -2,10 +2,9 @@
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
 
-#define DEBUG 1
 #define RELEASE_URL "https://api.github.com/repos/Joshjess/EV3/releases/latest"
 #define ACCESS_TOKEN "8530a9f424eb3da8bdf595e88089600f0116ccd3"
-#define FILE_TO_DOWNLOAD_TO "legoEV3Main" // NEEDS TO BE ADJUSTED TO RIGHT LOCATION
+#define FILE_TO_DOWNLOAD_TO "robotics" // NEEDS TO BE ADJUSTED TO RIGHT LOCATION
 
 using namespace std;
 using namespace nlohmann;

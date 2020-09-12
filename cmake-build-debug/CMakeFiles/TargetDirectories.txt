@@ -1,0 +1,14 @@
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/install/strip.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/install.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/list_install_components.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/ev3dev.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/CMakeFiles/install/local.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/install/strip.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/edit_cache.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/drive-test.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/list_install_components.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/install/local.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/cmake-build-debug/application/CMakeFiles/install.dir
