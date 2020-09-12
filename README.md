@@ -24,4 +24,7 @@ Type=simple
 ExecStart= INSERT THE LOCATION TO THE AUTODOWNLOAD SCRIPT 
 AND START IT
 ```
-8. Restart the robot and see if it works.
+
+8. Insert command `systemctl daemon-reload`
+9. Insert command `systemctl enable robotics.service`
+10. Restart the robot and see if it works.
