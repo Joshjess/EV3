@@ -14,7 +14,7 @@ addons:
 
 script:
 - mkdir -p build && cd build
-- cmake .. -DEV3DEV_PLATFORM=EV3
+- CC=arm-linux-gnueabi-gcc CXX=arm-linux-gnueabi-g++ cmake ..
 - make
 - ctest --output-on-failure
 
