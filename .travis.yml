@@ -1,7 +1,8 @@
 dist: trusty
 language: cpp
 compiler:
-- gcc 
+- gcc
+- clang
 
 addons:
   apt:
@@ -10,10 +11,12 @@ addons:
     packages:
     - gcc-5
     - g++-5
+    - gcc-arm-linux-gnueabi
+    - g++-arm-linux-gnueabi
 
 script:
 - mkdir -p build && cd build
-- CC=gcc-5 CXX=g++-5 cmake ..
+- cmake .. -DEV3DEV_PLATFORM=EV3
 - make
 - ctest --output-on-failure
 
