@@ -31,6 +31,6 @@ deploy:
   on:
     branch: feature/autodownloadstart
   api_key: $GITHUB_TOKEN
-  file: "${TRAVIS_BUILD_DIR}/build/application/drive-test"
+  file: "${TRAVIS_BUILD_DIR}/build/application/autodownload"
   skip_cleanup: true
 
