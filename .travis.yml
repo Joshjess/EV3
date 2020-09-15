@@ -1,15 +1,15 @@
 dist: trusty
 language: cpp
 compiler:
-- gcc 
+- gcc
 
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - gcc-5
-    - g++-5
+    - arm-linux-gnueabi-gcc
+    - arm-linux-gnueabi-g++
     - build-essential
 
 script:
