@@ -10,8 +10,6 @@ addons:
     packages:
     - gcc-5
     - g++-5
-    - arm-linux-gnueabi-gcc
-    - arm-linux-gnueabi-g++
     - build-essential
 
 script:
