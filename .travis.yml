@@ -10,7 +10,6 @@ addons:
     packages:
     - gcc-5
     - g++-5
-    - build-essential
 
 script:
 - mkdir -p build && cd build
