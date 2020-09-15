@@ -2,6 +2,7 @@ dist: trusty
 language: cpp
 compiler:
 - gcc
+- clang
 
 addons:
   apt:
@@ -10,6 +11,8 @@ addons:
     packages:
     - gcc-5
     - g++-5
+    - gcc-arm-linux-gnueabi
+    - g++-arm-linux-gnueabi
 
 script:
 - mkdir -p build && cd build
