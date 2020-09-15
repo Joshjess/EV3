@@ -88,30 +88,6 @@ control::~control()
   reset();
 }
 
-void control::drive(int speed, int time)
-{
-  _motor_left.set_speed_sp(-speed);
-
-  _motor_right.set_speed_sp(-speed);
-
-  _state = state_driving;
-
-  if (time > 0)
-  {
-    _motor_left .set_time_sp(time).run_timed();
-    _motor_right.set_time_sp(time).run_timed();
-
-    while (_motor_left.state().count("running") || _motor_right.state().count("running"))
-      this_thread::sleep_for(chrono::milliseconds(10));
-
-    _state = state_idle;
-  }
-  else
-  {
-    _motor_left.run_forever();
-    _motor_right.run_forever();
-  }
-}
 
 void control::turn(int direction)
 {
@@ -123,8 +99,8 @@ void control::turn(int direction)
 
   _state = state_turning;
 
-  _motor_left. set_position_sp( direction).set_speed_sp(500).run_to_rel_pos();
-  _motor_right.set_position_sp(-direction).set_speed_sp(500).run_to_rel_pos();
+  _motor_left.set_speed_sp(direction);
+  _motor_right.set_speed_sp(direction);
 
   while (_motor_left.state().count("running") || _motor_right.state().count("running"))
     this_thread::sleep_for(chrono::milliseconds(10));
@@ -157,37 +133,6 @@ bool control::initialized() const
           _motor_right.connected() &&
           _sensor_ir  .connected());
 }
-
-void control::terminate_on_key()
-{
- #ifndef NO_LINUX_HEADERS
-  thread t([&] () {
-    int fd = open("/dev/input/by-path/platform-gpio-keys.0-event", O_RDONLY);
-    if (fd  < 0)
-    {
-      cout << "Couldn't open platform-gpio-keys device!" << endl;
-      return;
-    }
-
-    input_event ev;
-    while (true)
-    {
-      size_t rb = read(fd, &ev, sizeof(ev));
-
-      if (rb < sizeof(input_event))
-        continue;
-
-      if ((ev.type == EV_KEY) /*&& (ev.value == KEY_PRESS)*/)
-      {
-        terminate();
-        return;
-      }
-    }
-  });
-  t.detach();
- #endif
-}
-
 
 void control::remote_loop()
 {
@@ -265,31 +210,30 @@ void control::remote_loop()
 
 void control::line_following(){
     light_sensor light;
-    short value = 0;
-    short integral = 0;
-    short lasterror = 0;
-    short motorleftspeed;
-    short motorrightspeed;
-    float middenpunt;
-    short white = 70;
-    short black = 40;
-    middenpunt = (white + black) / 2;
-    short beginsnelheid = 30;
-    short correction;
-    float kp = 1.5;
+    int value = 0;
+    int integral = 0;
+    int lasterror = 0;
+    float middelpunt;
+    int white = 50;
+    int black = 5;
+    middelpunt = (white + black) / 2;
+    int motorleftspeed = 50;
+    int motorrightspeed = 50;
+    int correction;
+    float kp = 1;
     float ki = 0;
     float kd = 0;
 
 
     while (!_terminate){
             value = light.reflected_light_intensity();
-            short error = value - middenpunt;
+            int error = value - middelpunt;
             integral = error + integral;
-            short derivative = error - lasterror;
+            int derivative = error - lasterror;
             correction = (kp * error) + (ki * integral) + (kd * derivative);
 
-            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 8);
-            motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 8);
+            motorleftspeed = motorleftspeed -  correction  ;
+            motorrightspeed = motorrightspeed  ;
             control(motorrightspeed);
             control(motorleftspeed);
             lasterror = error;
