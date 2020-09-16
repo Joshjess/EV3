@@ -301,8 +301,8 @@ void control::line_following(){
         int derivative = error - lasterror;
         correction = (kp * error) + (ki * integral) + (kd * derivative);
 
-        motorleftspeed = motorleftspeed -  correction  ;
-        motorrightspeed = motorrightspeed + correction  ;
+        motorleftspeed = (motorleftspeed -  correction) / 8 ;
+        motorrightspeed = (motorrightspeed + correction) /8  ;
         steer(motorleftspeed, motorrightspeed);
         lasterror = error;
 
