@@ -241,8 +241,8 @@ void control::remote_loop() {
 
 void control::steer(int motorLeft, int motorRight) {
 
-    _motor_left.set_position_sp(motorLeft).set_speed_sp(10).run_to_rel_pos();
-    _motor_right.set_position_sp(-motorRight).set_speed_sp(10).run_to_rel_pos();
+    _motor_left.set_position_sp(motorLeft).set_speed_sp(5).run_to_rel_pos();
+    _motor_right.set_position_sp(-motorRight).set_speed_sp(5).run_to_rel_pos();
 
     while (_motor_left.state().count("running") || _motor_right.state().count("running"))
         this_thread::sleep_for(chrono::milliseconds(10));
@@ -260,7 +260,7 @@ void control::line_following() {
     int middelpunt = 7;
     int beginsnelheid = 30;
     int correction;
-    float kp = 1.2;
+    float kp = 1.0;
     float ki = 0;
     float kd = 0;
 
