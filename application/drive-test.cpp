@@ -267,8 +267,8 @@ void control::remote_loop()
 void control::steer(short motorLeft, short motorRight)
 {
 
-    _motor_left. set_position_sp( motorLeft).set_speed_sp(100).run_to_rel_pos();
-    _motor_right.set_position_sp(-motorRight).set_speed_sp(100).run_to_rel_pos();
+    _motor_left. set_speed_sp(motorLeft).run_to_rel_pos();
+    _motor_right.set_speed_sp(motorRight).run_to_rel_pos();
 
     while (_motor_left.state().count("running") || _motor_right.state().count("running"))
         this_thread::sleep_for(chrono::milliseconds(10));
@@ -295,15 +295,18 @@ void control::line_following(){
 
 
     while (!_terminate){
-            value = light.reflected_light_intensity();
-            short error = value - middenpunt - (100 * (value - black ) / (white - black));
-            integral = error + integral;
-            short derivative = error - lasterror;
-            correction = (kp * error) + (ki * integral) + (kd * derivative);
-            motorleftspeed = beginsnelheid - (correction < 0 ? -1 : 1) * (correction * correction / 16);
-            motorrightspeed = beginsnelheid + (correction < 0 ? -1 : 1) * (correction * correction / 16);
-            steer(motorleftspeed, motorrightspeed);
-            lasterror = error;
+        value = light.reflected_light_intensity();
+        int error = value - middelpunt;
+        integral = error + integral;
+        int derivative = error - lasterror;
+        correction = (kp * error) + (ki * integral) + (kd * derivative);
+
+        motorleftspeed = motorleftspeed -  correction  ;
+        motorrightspeed = motorrightspeed + correction  ;
+        steer(motorleftspeed, motorrightspeed);
+        lasterror = error;
+
+
             cout << "value: " << value << " error: " << error << endl;
             cout << "Left: " << motorleftspeed << " Right: " << motorrightspeed << endl;
     }
