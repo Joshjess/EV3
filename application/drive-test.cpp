@@ -48,7 +48,7 @@ public:
   void stop();
   void reset();
 
-  void steer(short motorLeft, short motorRight);
+  void steer(int motorLeft, int motorRight);
 
   bool initialized() const;
 
@@ -264,7 +264,7 @@ void control::remote_loop()
 }
 
 
-void control::steer(short motorLeft, short motorRight)
+void control::steer(int motorLeft, int motorRight)
 {
 
     _motor_left. set_speed_sp(motorLeft).run_to_rel_pos();
@@ -279,16 +279,16 @@ void control::steer(short motorLeft, short motorRight)
 
 void control::line_following(){
     color_sensor light;
-    short value = 0;
-    short integral = 0;
-    short lasterror = 0;
-    short motorleftspeed;
-    short motorrightspeed;
-    short white = 50;
-    short black = 5;
-    short middenpunt = 20;
-    short beginsnelheid = 30;
-    short correction;
+    int value = 0;
+    int integral = 0;
+    int lasterror = 0;
+    int motorleftspeed;
+    int motorrightspeed;
+    int white = 50;
+    int black = 5;
+    int middelpunt = 20;
+    int beginsnelheid = 30;
+    int correction;
     float kp = 1.1;
     float ki = 0;
     float kd = 0;
