@@ -267,8 +267,8 @@ void control::remote_loop()
 void control::steer(int motorLeft, int motorRight)
 {
 
-    _motor_left.set_position_sp(-motorLeft).set_speed_sp(100).run_to_rel_pos();
-    _motor_right.set_position_sp(motorRight).set_speed_sp(100).run_to_rel_pos();
+    _motor_left.set_position_sp(motorLeft).set_speed_sp(100).run_to_rel_pos();
+    _motor_right.set_position_sp(-motorRight).set_speed_sp(100).run_to_rel_pos();
 
     while (_motor_left.state().count("running") || _motor_right.state().count("running"))
         this_thread::sleep_for(chrono::milliseconds(10));
