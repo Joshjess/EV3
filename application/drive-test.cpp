@@ -256,10 +256,12 @@ void control::line_following() {
     int value = 0;
     int integral = 0;
     int lasterror = 0;
-    int motorSpeed;
+    int motorSpeed = 0;
     int middelpunt = 7;
     int beginsnelheid = 30;
     int correction;
+    int error;
+    int derivative;
     float kp = 0.65;
     float ki = 0.02;
     float kd = 1;
@@ -267,15 +269,15 @@ void control::line_following() {
 
     while (!_terminate) {
         value = light.reflected_light_intensity();
-        int error = value - middelpunt;
-        integral = error + integral;
-        int derivative = error - lasterror;
-        correction = (kp * error) + (ki * integral) + (kd * derivative);
-
-        motorSpeed = motorSpeed - correction;
-        if (correction < 15) {
+        if (value < 15) {
             drive(1000, 50);
         }else {
+            error = value - middelpunt;
+            integral = error + integral;
+            derivative = error - lasterror;
+            correction = (kp * error) + (ki * integral) + (kd * derivative);
+
+            motorSpeed = motorSpeed - correction;
             turn(motorSpeed);
         }
         lasterror = error;
