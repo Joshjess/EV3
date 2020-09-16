@@ -166,7 +166,7 @@ void control::terminate_on_key()
 }
 
 void control::line_following(){
-    light_sensor light;
+    color_sensor light;
     int value = 0;
     int integral = 0;
     int lasterror = 0;
