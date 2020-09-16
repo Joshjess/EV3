@@ -245,7 +245,7 @@ void control::steer(int motorLeft, int motorRight) {
     _motor_right.set_position_sp(-motorRight).set_speed_sp(5).run_to_rel_pos();
 
     while (_motor_left.state().count("running") || _motor_right.state().count("running"))
-        this_thread::sleep_for(chrono::milliseconds(10));
+        this_thread::sleep_for(chrono::milliseconds(1));
 
     _state = state_idle;
 }
