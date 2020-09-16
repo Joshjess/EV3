@@ -262,7 +262,7 @@ void control::line_following() {
     int correction;
     float kp = 1.0;
     float ki = 0;
-    float kd = 0;
+    float kd = 0.5;
 
 
     while (!_terminate) {
@@ -274,7 +274,7 @@ void control::line_following() {
 
         motorSpeed = motorSpeed - correction;
         if (correction < 15) {
-            drive(100, 500);
+            drive(1000, 50);
         }else {
             turn(motorSpeed);
         }
