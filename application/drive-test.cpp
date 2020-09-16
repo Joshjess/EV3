@@ -273,8 +273,8 @@ void control::line_following() {
         correction = (kp * error) + (ki * integral) + (kd * derivative);
 
         motorSpeed = motorSpeed - correction;
-        if (correction < 7) {
-            drive(100, 1);
+        if (correction < 9) {
+            drive(200, 10);
         }else {
             turn(motorSpeed);
         }
