@@ -134,79 +134,36 @@ bool control::initialized() const
           _sensor_ir  .connected());
 }
 
-void control::remote_loop()
+
+void control::terminate_on_key()
 {
-    //code veranderen naar bluetooth remote
+#ifndef NO_LINUX_HEADERS
+    thread t([&] () {
+        int fd = open("/dev/input/by-path/platform-gpio-keys.0-event", O_RDONLY);
+        if (fd  < 0)
+        {
+            cout << "Couldn't open platform-gpio-keys device!" << endl;
+            return;
+        }
 
-  remote_control r(_sensor_ir);
+        input_event ev;
+        while (true)
+        {
+            size_t rb = read(fd, &ev, sizeof(ev));
 
-  if (!r.connected())
-  {
-    cout << "no infrared sensor found!" << endl;
-    return;
-  }
+            if (rb < sizeof(input_event))
+                continue;
 
-  const int speed = 700;
-  const int ninety_degrees = 260;
-
-  r.on_red_up = [&] (bool state)
-  {
-    if (state)
-    {
-      if (_state == state_idle)
-        drive(speed);
-    }
-    else
-      stop();
-  };
-
-  r.on_red_down = [&] (bool state)
-  {
-    if (state)
-    {
-      if (_state == state_idle)
-        drive(-speed);
-    }
-    else
-      stop();
-  };
-
-  r.on_blue_up = [&] (bool state)
-  {
-    if (state)
-    {
-      if (_state == state_idle)
-        turn(-ninety_degrees);
-    }
-  };
-
-  r.on_blue_down = [&] (bool state)
-  {
-    if (state)
-    {
-      if (_state == state_idle)
-        turn(ninety_degrees);
-    }
-  };
-
-  r.on_beacon = [&] (bool state)
-  {
-    if (state)
-      terminate();
-  };
-
-  while (!_terminate)
-  {
-    if (!r.process())
-    {
-      this_thread::sleep_for(chrono::milliseconds(10));
-    }
-  }
-
-  reset();
+            if ((ev.type == EV_KEY) /*&& (ev.value == KEY_PRESS)*/)
+            {
+                terminate();
+                return;
+            }
+        }
+    });
+    t.detach();
+#endif
 }
-
-
 
 void control::line_following(){
     light_sensor light;
