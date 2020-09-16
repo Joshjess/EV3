@@ -1,1 +1,1 @@
-add_ev3_executable(drive-test          drive-test.cpp)
+add_ev3_executable(dis-checker          main.cpp)
