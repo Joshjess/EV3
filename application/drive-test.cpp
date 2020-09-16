@@ -260,9 +260,9 @@ void control::line_following() {
     int middelpunt = 7;
     int beginsnelheid = 30;
     int correction;
-    float kp = 1.0;
-    float ki = 0;
-    float kd = 0.5;
+    float kp = 0.65;
+    float ki = 0.02;
+    float kd = 1;
 
 
     while (!_terminate) {
