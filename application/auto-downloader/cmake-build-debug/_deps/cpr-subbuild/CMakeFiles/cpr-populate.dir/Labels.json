@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/CMakeFiles/cpr-populate"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/CMakeFiles/cpr-populate.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/CMakeFiles/cpr-populate-complete.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-install.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-download.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-update.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-patch.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-configure.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-build.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/cpr-subbuild/cpr-populate-prefix/src/cpr-populate-stamp/cpr-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cpr-populate"
+		],
+		"name" : "cpr-populate"
+	}
+}

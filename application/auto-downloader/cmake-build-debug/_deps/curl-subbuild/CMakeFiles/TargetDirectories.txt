@@ -1,0 +1,3 @@
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/curl-subbuild/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/curl-subbuild/CMakeFiles/curl-populate.dir
+/mnt/c/Users/moham/Documents/GIT-Projects/HvA/EV3/application/auto-downloader/cmake-build-debug/_deps/curl-subbuild/CMakeFiles/edit_cache.dir
