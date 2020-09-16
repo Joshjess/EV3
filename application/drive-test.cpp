@@ -274,7 +274,7 @@ void control::line_following() {
 
         motorSpeed = motorSpeed - correction;
         if (correction < 9) {
-            drive(200, 10);
+            drive(100, 100);
         }else {
             turn(motorSpeed);
         }
