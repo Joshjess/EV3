@@ -191,8 +191,8 @@ void control::line_following(){
 
             motorleftspeed = motorleftspeed -  correction  ;
             motorrightspeed = motorrightspeed + correction  ;
-            control(motorrightspeed);
-            control(motorleftspeed);
+            turn(motorrightspeed);
+            turn(motorleftspeed);
             lasterror = error;
     }
 
