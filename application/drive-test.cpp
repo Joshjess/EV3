@@ -190,7 +190,7 @@ void control::line_following(){
             correction = (kp * error) + (ki * integral) + (kd * derivative);
 
             motorleftspeed = motorleftspeed -  correction  ;
-            motorrightspeed = motorrightspeed  ;
+            motorrightspeed = motorrightspeed + correction  ;
             control(motorrightspeed);
             control(motorleftspeed);
             lasterror = error;
