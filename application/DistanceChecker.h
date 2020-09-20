@@ -1,9 +1,11 @@
 //
 // Created by mohamedelh on 16-9-2020.
 //
-#include "../ev3dev.h"
 #ifndef EV3_DISTANCECHECKER_H
 #define EV3_DISTANCECHECKER_H
+
+#include "../ev3dev.h"
+
 #define INCH_UNIT "inch"
 #define CM_UNIT "cm"
 
